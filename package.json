@@ -6,18 +6,20 @@
   "scripts": {
     "css": "node-sass --importer node_modules/node-sass-globbing/index.js --include-path scss src/scss/style.scss style.css",
     "serve-html": "browser-sync start --server --files='index.html'",
-    "serve-wp": "node ./src/js/server.js",
+    "serve-wp": "node ./src/js/browser-sync.js",
     "imagemin": "imagemin src/img/**/* -o assets/img",
     "start": "npm run imagemin | npm run watch | npm run serve-wp",
     "build": "npm run css | npm run imagemin",
-    "test": "npm run imagemin | npm run watch | npm run serve-wp",
+    "test": "npm run imagemin | npm run watch | npm run pug-watch |npm run serve-html",
     "watch-css": "nodemon -e scss -x \"npm run css\"",
     "watch": "nodemon -e scss -x \"npm run css\"",
-    "bs": "browser-sync start --server --files='*.html, *.css'"
+    "bs": "browser-sync start --server --files='*.html, *.css'",
+    "pug": "pug src/pug --hierarchy -o ./ -P",
+    "pug-watch": "pug src/pug --hierarchy -o ./  --watch --pretty"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:musus/aniuma_npm.git"
+    "url": "git@github.com:musus/npm-starter.git"
   },
   "author": "",
   "license": "ISC",
@@ -28,5 +30,9 @@
     "node-sass-globbing": "0.0.23",
     "nodemon": "^1.18.5",
     "uglify-js": "^3.4.9"
+  },
+  "dependencies": {
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6"
   }
 }

@@ -1,0 +1,11 @@
+main.main
+  h2.content_ttl #{title}
+
+  p トップページのコンテンツ
+
+  ul.list-for
+    - for( var i =1; i < 6 ; i++ )
+        li.list-for__item
+            a(href="#") #{i}テキスト
+
+//- see document https://pugjs.org/language/iteration.html
