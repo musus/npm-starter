@@ -1,0 +1,43 @@
+@charset 'utf-8';
+
+// color
+$color-text: #262626;
+$color-link: #262626;
+$color-primary: #262626;
+$color-primary--light: #3dd0c9;
+$color-secondary: #b9aa56;
+$color-thread: #e2e2e2;
+
+body {
+  color: $color-text;
+  a {
+    color: $color-link;
+    text-decoration: none;
+    display: inline-block;
+    &:hover {
+      color: $color-link;
+      cursor: pointer;
+      text-decoration: underline;
+      opacity:0.6;
+    }
+  }
+}
+
+
+// layout
+$width: 980px;
+
+// font size
+// for PC
+$fs-ll: 30px;
+$fs-l: 21px;
+$fs-m: 18px;
+$fs-s: 14px;
+$fs-xs: 11px;
+
+// for SP
+$fs-ll-sp: 30vw;
+$fs-l-sp: 21vw;
+$fs-m-sp: 18vw;
+$fs-s-sp: 14vw;
+$fs-xs-sp: 11vw;

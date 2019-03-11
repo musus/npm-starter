@@ -1,0 +1,44 @@
+@charset 'utf-8';
+
+// image
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+// list
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+// clear
+.cf:before,.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
+
+// link
+a {
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+	img {
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
+
+// table
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
