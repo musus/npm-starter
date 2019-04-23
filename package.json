@@ -12,7 +12,7 @@
     "watch-css": "nodemon -e scss -x \"npm run css\"",
     "watch-ejs": "nodemon -e ejs -x \"npm run ejs \"",
     "watch": "npm run watch-css | npm run watch-ejs",
-    "start": "npm run imagemin | npm run ejs | npm run css | npm run watch",
+    "start": "npm run imagemin | npm run ejs | npm run css | npm run watch | npm run serve-html",
     "test": "npm run imagemin | npm run css | npm run ejs"
   },
   "repository": {
