@@ -4,18 +4,16 @@
   "description": "",
   "main": "package.json",
   "scripts": {
-    "css": "node-sass --importer node_modules/node-sass-globbing/index.js --include-path scss src/scss/style.scss style.css",
-    "serve-html": "browser-sync start --server --files='index.html'",
-    "serve-wp": "node ./src/js/browser-sync.js",
     "imagemin": "imagemin src/img/**/* -o assets/img",
-    "start": "npm run imagemin | npm run watch | npm run serve-wp",
-    "build": "npm run css | npm run imagemin",
-    "test": "npm run imagemin | npm run watch | npm run pug-watch |npm run serve-html",
+    "ejs": "ejs-cli --base-dir src/ejs '*.ejs' --out ./",
+    "css": "node-sass --importer node_modules/node-sass-globbing/index.js --include-path scss src/scss/style.scss style.css",
+    "serve-html": "browser-sync start --server --files='*.html, *.css'",
+    "serve-wp": "node ./src/js/browser-sync.js",
     "watch-css": "nodemon -e scss -x \"npm run css\"",
-    "watch": "nodemon -e scss -x \"npm run css\"",
-    "bs": "browser-sync start --server --files='*.html, *.css'",
-    "pug": "pug src/pug --hierarchy -o ./ -P",
-    "pug-watch": "pug src/pug --hierarchy -o ./  --watch --pretty"
+    "watch-ejs": "nodemon -e ejs -x \"npm run ejs \"",
+    "watch": "npm run watch-css | npm run watch-ejs",
+    "start": "npm run imagemin | npm run ejs | npm run css | npm run watch",
+    "test": "npm run imagemin | npm run css | npm run ejs"
   },
   "repository": {
     "type": "git",
@@ -25,14 +23,12 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.3",
+    "ejs-cli": "^2.0.1",
+    "gulp-watch": "^5.0.1",
     "imagemin-cli": "^3.0.0",
     "node-sass": "^4.9.4",
     "node-sass-globbing": "0.0.23",
     "nodemon": "^1.18.5",
     "uglify-js": "^3.4.9"
-  },
-  "dependencies": {
-    "pug": "^2.0.3",
-    "pug-cli": "^1.0.0-alpha6"
   }
 }
