@@ -22,13 +22,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.7",
     "ejs-cli": "^2.0.1",
     "gulp-watch": "^5.0.1",
     "imagemin-cli": "^3.0.0",
-    "node-sass": "^4.9.4",
+    "node-sass": "^4.12.0",
     "node-sass-globbing": "0.0.23",
-    "nodemon": "^1.18.5",
-    "uglify-js": "^3.4.9"
+    "nodemon": "^1.19.1",
+    "uglify-js": "^3.6.0"
   }
 }
