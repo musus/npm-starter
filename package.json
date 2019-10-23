@@ -29,6 +29,7 @@
     "node-sass": "^4.12.0",
     "node-sass-globbing": "0.0.23",
     "nodemon": "^1.19.1",
-    "uglify-js": "^3.6.0"
+    "uglify-js": "^3.6.0",
+    "set-value": ">=2.0.1"
   }
 }
