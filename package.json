@@ -4,7 +4,7 @@
   "description": "",
   "main": "package.json",
   "scripts": {
-    "imagemin": "imagemin src/img/**/* -o assets/img",
+    "imagemin": "imagemin src/img/**/* --out-dir=assets/img",
     "ejs": "ejs-cli --base-dir src/ejs '*.ejs' --out ./",
     "css": "node-sass --importer node_modules/node-sass-globbing/index.js --include-path scss src/scss/style.scss style.css",
     "serve-html": "browser-sync start --server --files='*.html, *.css'",
@@ -25,11 +25,12 @@
     "browser-sync": "^2.26.7",
     "ejs-cli": "^2.0.1",
     "gulp-watch": "^5.0.1",
-    "imagemin-cli": "^3.0.0",
+    "imagemin-cli": "^5.0.0",
+    "minimatch": "^3.0.4",
     "node-sass": "^4.12.0",
     "node-sass-globbing": "0.0.23",
     "nodemon": "^1.19.1",
-    "uglify-js": "^3.6.0",
-    "set-value": ">=2.0.1"
+    "set-value": ">=2.0.1",
+    "uglify-js": "^3.6.0"
   }
 }
