@@ -1,0 +1,40 @@
+[
+    {
+        "label": "localhost",
+        "url": "http://localhost:3000/",
+        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "referenceUrl": "",
+        "readyEvent": "",
+        "readySelector": "",
+        "delay": 0,
+        "hideSelectors": [],
+        "removeSelectors": [],
+        "hoverSelector": "",
+        "clickSelector": "",
+        "postInteractionWait": 0,
+        "selectors": [],
+        "selectorExpansion": true,
+        "expect": 0,
+        "misMatchThreshold" : 0.1,
+        "requireSameDimensions": true
+    },
+    {
+        "label": "test",
+        "url": "http://localhost:3000/test",
+        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "referenceUrl": "",
+        "readyEvent": "",
+        "readySelector": "",
+        "delay": 0,
+        "hideSelectors": [],
+        "removeSelectors": [],
+        "hoverSelector": "",
+        "clickSelector": "",
+        "postInteractionWait": 0,
+        "selectors": [],
+        "selectorExpansion": true,
+        "expect": 0,
+        "misMatchThreshold" : 0.1,
+        "requireSameDimensions": true
+    }
+]
