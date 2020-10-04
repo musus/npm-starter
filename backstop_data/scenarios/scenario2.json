@@ -1,7 +1,7 @@
 {
     "label": "localhost2",
     "url": "http://localhost:3000/22",
-    "cookiePath": "backstop_data/engine_scripts/cookies.json",
+    "cookiePath": "",
     "referenceUrl": "",
     "readyEvent": "",
     "readySelector": "",

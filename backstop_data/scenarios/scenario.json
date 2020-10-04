@@ -2,7 +2,7 @@
     {
         "label": "localhost",
         "url": "http://localhost:3000/",
-        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "cookiePath": "",
         "referenceUrl": "",
         "readyEvent": "",
         "readySelector": "",
@@ -21,7 +21,7 @@
     {
         "label": "test",
         "url": "http://localhost:3000/test",
-        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "cookiePath": "",
         "referenceUrl": "",
         "readyEvent": "",
         "readySelector": "",

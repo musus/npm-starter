@@ -2,7 +2,12 @@ const fs = require('fs');
 
 module.exports = async (page, scenario) => {
   let cookies = [];
-  const cookiePath = scenario.cookiePath;
+  
+  const defaultCookiePath = "backstop_data/engine_scripts/cookies.json";
+  const cookiePath =
+  scenario.cookiePath == "" ?
+    defaultCookiePath :
+    scenario.cookiePath;
 
   // READ COOKIES FROM FILE IF EXISTS
   if (fs.existsSync(cookiePath)) {
@@ -25,5 +30,10 @@ module.exports = async (page, scenario) => {
     );
   };
   await setCookies();
-  console.log('Cookie state restored with:', JSON.stringify(cookies, null, 2));
+ 
+  if (process.env.VERBOSE) {
+    console.log("Cookie state restored with:", JSON.stringify(cookies, null, 2));
+  } else {
+    console.log("Cookie state restored.");
+  }
 };
