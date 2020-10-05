@@ -33,7 +33,7 @@ module.exports={
     {
       "label": "PC",
       "width": 1440,
-      "height": 1200
+      "height": 1080
     }
   ],
   "onBeforeScript": "puppet/onBefore.js",
