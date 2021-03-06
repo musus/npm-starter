@@ -5,7 +5,7 @@
   "main": "package.json",
   "scripts": {
     "imagemin": "imagemin src/img/**/* --out-dir=assets/img",
-    "ejs": "ejs-cli --base-dir src/ejs '*.ejs' --out ./",
+    "ejs": "ejs-cli --base-dir src/ejs \"*.ejs\" --out ./",
     "css": "node-sass --importer node_modules/node-sass-globbing/index.js --include-path scss src/scss/style.scss style.css",
     "ujs1": "uglifyjs src/js/app.js -c -o assets/js/app.js",
     "ujs": "npm run ujs1",
