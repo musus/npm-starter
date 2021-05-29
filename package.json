@@ -13,7 +13,7 @@
     "serve-wp": "node ./src/js/browser-sync.js --no-notify",
     "watch-css": "nodemon -e scss -x \"npm run css\"",
     "watch-ejs": "nodemon -e ejs -x \"npm run ejs \"",
-    "watch-js": "nodemon --watch assets/_js -e js -x \"npm run ujs\"",
+    "watch-js": "nodemon --watch src/js -e js -x \"npm run ujs\"",
     "watch": "npm run watch-css | npm run watch-ejs | npm run watch-js",
     "start": "npm run imagemin ; npm run ejs | npm run css | npm run watch | npm run serve-html",
     "test": "npm run imagemin ; npm run css | npm run ejs",
