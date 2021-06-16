@@ -10,7 +10,7 @@
     "ujs1": "uglifyjs assets/src/js/app.js -c -o assets/js/app.js",
     "ujs": "npm run ujs1",
     "serve-html": "browser-sync start --server --files='*.html, *.css' --no-notify",
-    "serve-wp": "node ./assets/config/browser-sync.js --no-notify",
+    "serve-wp": "node ./assets/src/config/server.js --no-notify",
     "watch-css": "nodemon -e scss -x \"npm run css\"",
     "watch-ejs": "nodemon -e ejs -x \"npm run ejs \"",
     "watch-js": "nodemon --watch src/js -e js -x \"npm run ujs\"",
