@@ -6,7 +6,7 @@
   "scripts": {
     "imagemin": "rm -f assets/img/*; imagemin src/img/**/* --out-dir=assets/img",
     "ejs": "ejs-cli --base-dir src/ejs \"*.ejs\" --out ./",
-    "css": "sass src/scss/style.scss:style.css --style expanded | postcss --use autoprefixer -b 'last 2 versions ie >= 11 Android >= 7 last 3 iOS major versions' style.css -o style.css",
+    "css": "sass src/scss/style.scss:style.css --style expanded ; postcss --use autoprefixer -b 'last 2 versions ie >= 11 Android >= 7 last 3 iOS major versions' style.css -o style.css",
     "css-min": "cleancss -o style.min.css style.css",
     "ujs1": "uglifyjs src/js/app.js -c -o assets/js/app.js",
     "ujs": "npm run ujs1",
