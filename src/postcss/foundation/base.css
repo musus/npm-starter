@@ -1,0 +1,23 @@
+$main-color : #444;
+
+html {
+    max-width: 100vw;
+}
+
+body {
+
+}
+
+ul{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: $main-color;
+}

@@ -4,20 +4,20 @@
   "description": "",
   "main": "package.json",
   "scripts": {
-    "imagemin": "rm -f assets/img/*; imagemin src/img/**/* --out-dir=assets/img",
+    "imagemin": "rm -f assets/img/*; imagemin src/img/** --out-dir=assets/img",
     "ejs": "ejs-cli --base-dir src/ejs \"*.ejs\" --out ./",
-    "css": "sass src/scss/style.scss:style.css --style expanded ; postcss --use autoprefixer -b 'last 2 versions ie >= 11 Android >= 7 last 3 iOS major versions' style.css -o style.css",
+    "css": "postcss --use autoprefixer -b 'last 2 versions ie >= 11 Android >= 7 last 3 iOS major versions' src/postcss/_style.css -o style.css",
     "css-min": "cleancss -o style.min.css style.css",
-    "ujs1": "uglifyjs src/js/app.js -c -o assets/js/app.js",
-    "ujs": "npm run ujs1",
+    "js-min": "terser src/js/*.js --compress --mangle --output assets/js/bundle.min.js",
+    "ujs": "npm run js-min",
     "serve-html": "browser-sync start --server --files='*.html, *.css' --no-notify",
-    "serve-wp": "node ./src/js/browser-sync.js --no-notify",
-    "watch-css": "nodemon -e scss -x \"npm run css; npm run css-min\"",
+    "serve-wp": "node ./src/browser-sync.js --no-notify",
+    "watch-css": "nodemon --watch 'src/**/**/*.css' -e css --exec 'npm run css'",
     "watch-ejs": "nodemon -e ejs -x \"npm run ejs \"",
-    "watch-js": "nodemon --watch src/js -e js -x \"npm run ujs\"",
-    "watch": "npm run watch-css | npm run watch-ejs | npm run watch-js",
-    "start": "npm run imagemin ; npm run ejs | npm run css | npm run watch | npm run serve-html",
-    "test": "npm run imagemin ; npm run css | npm run ejs"
+    "watch-js": "nodemon --watch 'src/js/*.js' -e js --exec 'npm run ujs'",
+    "watch-images": "nodemon --watch src/img -e png,jpg,jpeg,gif,svg --exec 'npm run imagemin'",
+    "watch": "npm-run-all --parallel watch-css watch-images watch-js watch-ejs",
+    "start": "npm-run-all --parallel serve-wp watch-css watch-images watch-js watch-ejs"
   },
   "repository": {
     "type": "git",
@@ -26,22 +26,34 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.4.14",
-    "browser-sync": "^2.29.3",
-    "clean-css-cli": "^5.6.2",
+    "autoprefixer": "^10.4.19",
+    "browser-sync": "^3.0.2",
+    "clean-css-cli": "^5.6.3",
     "ejs-cli": "^2.2.3",
     "gulp-watch": "^5.0.1",
-    "imagemin-cli": "^7.0.0",
-    "minimatch": "^9.0.1",
-    "node-sass-globbing": "0.0.23",
-    "nodemon": "^2.0.22",
-    "postcss": "^8.4.24",
-    "postcss-cli": "^10.1.0",
-    "sass": "^1.63.4",
+    "imagemin-cli": "^8.0.0",
+    "minimatch": "^9.0.4",
+    "nodemon": "^3.1.3",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.38",
+    "postcss-calc": "^10.0.0",
+    "postcss-cli": "^11.0.0",
+    "postcss-combine-media-query": "^1.0.1",
+    "postcss-comment": "^2.0.0",
+    "postcss-easy-import": "^4.0.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-functions": "^4.0.2",
+    "postcss-nested": "^6.0.1",
+    "postcss-simple-vars": "^7.0.1",
     "set-value": ">=4.1.0",
-    "uglify-js": "^3.17.4"
+    "stylelint": "^16.6.1",
+    "terser": "^5.31.1",
+    "uglify-js": "^3.18.0"
   },
   "volta": {
     "node": "18.16.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
   }
 }

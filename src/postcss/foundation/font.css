@@ -1,0 +1,5 @@
+$base-font-size: 15px;
+
+html {
+    font-size: $base-font-size;
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="/assets/js/app.js"></script>
+    <script type="text/javascript" src="/assets/js/bundle.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     
     <!-- WPでは自動でトップのCSSは読み込まれるっぽい -->
@@ -17,20 +17,20 @@
 
 <body>
     <% var myParam = 'Hello! EJS!'; %>
-    <% include partials/_header %>
+    <%- include('partials/_header') %>
     <div>
         <%= myParam %>
     </div>
     <%# これは残りません %>
     <!-- これは残ります -->
-    <%- include('components/_card', {title:'OKR',content:'object key result'}) %>
+    <%- include('components/_card', {title: 'OKR', content: 'object key result'}) %>
     <%# ループ %>
     <% for (var i = 0; i < 5; i++) { %>
     <p>このループは
-        <%= i+1 %>回目です。</p>
+        <%= i + 1 %>回目です。</p>
     <% } %>
     参考 : https://qiita.com/y_hokkey/items/31f1daa6cecb5f4ea4c9
-    <% include partials/_footer %>
+    <%- include('partials/_footer') %>
 </body>
 
 </html>

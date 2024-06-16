@@ -1,0 +1,6 @@
+$container-width: 390px;
+$container-width-value: 390;
+$fade-in-duration: 1s;
+$fade-in-ease: ease;
+$fade-in-Y: 30px;
+$fade-in-X: $fade-in-Y;
