@@ -4,21 +4,20 @@ module.exports = {
         require('postcss-combine-media-query'), // メディアクエリの結合
         require('postcss-easy-import')({
             prefix: '_',
-            extensions: ['.css'],
+            extensions: ['.css','.scss'],
             glob: true
         }), // インポート
         require('postcss-flexbugs-fixes'), // flexバグ
-        require('postcss-nested'), // ネスト用
         require('postcss-simple-vars'), // 変数用
+        require('postcss-mixins'), // ミックスイン用
+        require('postcss-nested'), // ネスト用
         require('postcss-calc'), // calc
         require('postcss-functions')({
             functions: {
-                getVw: function(size, viewport = 390) {
+                getVw: function(size, viewport = 375) {
                     return (size / viewport) * 100 + 'vw';
                 }
             }
         }),
-        require('autoprefixer') // ベンダープレフィックスの追加
     ]
 }
-
